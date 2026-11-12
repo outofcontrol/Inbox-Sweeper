@@ -46,3 +46,7 @@ DRY_RUN=1 zsh ~/bin/inbox-sweeper.sh /path/to/folder
 launchctl bootout gui/$(id -u)/local.inbox-sweeper
 rm ~/Library/LaunchAgents/local.inbox-sweeper.plist ~/bin/inbox-sweeper.sh
 ```
+
+## AI assistance
+
+This repository was built with the assistance of AI. A human reviewed the code and documentation.
