@@ -21,6 +21,8 @@ macOS 15 or later, which provides `/usr/bin/trash`.
 3. To change the age limit, edit `MAX_AGE_HOURS` in `inbox-sweeper.sh`.
 4. To change how often it runs, edit `StartInterval` (seconds) in the plist.
 
+`inbox-sweeper.sh` requires no changes. The plist passes the folder to it.
+
 ## Install
 
 ```sh
