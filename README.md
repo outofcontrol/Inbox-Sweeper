@@ -1,4 +1,4 @@
-# macOS Directory Cleanup
+# Inbox Sweeper
 
 A zsh script and a launchd agent that keep one folder tidy. Every hour, files and symlinks that have been in the folder for more than 24 hours move to the Trash, and subfolders left empty are removed.
 
@@ -16,33 +16,33 @@ macOS 15 or later, which provides `/usr/bin/trash`.
 
 ## Configure
 
-1. In `local.cleanup-old-files.plist`, replace `/Users/USERNAME/DIRECTORY` with the absolute path of the folder to clean.
+1. In `local.inbox-sweeper.plist`, replace `/Users/USERNAME/DIRECTORY` with the absolute path of the folder to clean.
 2. In the same file, replace `/Users/USERNAME` in the script and log paths with your home folder.
-3. To change the age limit, edit `MAX_AGE_HOURS` in `cleanup-old-files.sh`.
+3. To change the age limit, edit `MAX_AGE_HOURS` in `inbox-sweeper.sh`.
 4. To change how often it runs, edit `StartInterval` (seconds) in the plist.
 
 ## Install
 
 ```sh
 mkdir -p ~/bin
-cp cleanup-old-files.sh ~/bin/
-cp local.cleanup-old-files.plist ~/Library/LaunchAgents/
-launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/local.cleanup-old-files.plist
+cp inbox-sweeper.sh ~/bin/
+cp local.inbox-sweeper.plist ~/Library/LaunchAgents/
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/local.inbox-sweeper.plist
 ```
 
-The agent runs once on load and then every hour. Activity is logged to `~/Library/Logs/cleanup-old-files.log`.
+The agent runs once on load and then every hour. Activity is logged to `~/Library/Logs/inbox-sweeper.log`.
 
 ## Preview
 
 List what a run would move to the Trash:
 
 ```sh
-DRY_RUN=1 zsh ~/bin/cleanup-old-files.sh /path/to/folder
+DRY_RUN=1 zsh ~/bin/inbox-sweeper.sh /path/to/folder
 ```
 
 ## Uninstall
 
 ```sh
-launchctl bootout gui/$(id -u)/local.cleanup-old-files
-rm ~/Library/LaunchAgents/local.cleanup-old-files.plist ~/bin/cleanup-old-files.sh
+launchctl bootout gui/$(id -u)/local.inbox-sweeper
+rm ~/Library/LaunchAgents/local.inbox-sweeper.plist ~/bin/inbox-sweeper.sh
 ```

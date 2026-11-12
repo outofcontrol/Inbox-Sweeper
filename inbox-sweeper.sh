@@ -18,7 +18,7 @@
 # Added, or the Date Added of any subfolder it sits in. So if you drop an
 # existing folder in today, nothing inside it is trashed until tomorrow.
 #
-# Usage: cleanup-old-files.sh [folder]      (DRY_RUN=1 to only list)
+# Usage: inbox-sweeper.sh [folder]      (DRY_RUN=1 to only list)
 
 set -uo pipefail
 

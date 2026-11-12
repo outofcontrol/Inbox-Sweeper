@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>local.cleanup-old-files</string>
+    <string>local.inbox-sweeper</string>
 
     <key>ProgramArguments</key>
     <array>
         <string>/bin/zsh</string>
-        <string>/Users/USERNAME/bin/cleanup-old-files.sh</string>
+        <string>/Users/USERNAME/bin/inbox-sweeper.sh</string>
         <string>/Users/USERNAME/DIRECTORY</string>
     </array>
 
@@ -19,8 +19,8 @@
     <true/>
 
     <key>StandardOutPath</key>
-    <string>/Users/USERNAME/Library/Logs/cleanup-old-files.log</string>
+    <string>/Users/USERNAME/Library/Logs/inbox-sweeper.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/USERNAME/Library/Logs/cleanup-old-files.log</string>
+    <string>/Users/USERNAME/Library/Logs/inbox-sweeper.log</string>
 </dict>
 </plist>
